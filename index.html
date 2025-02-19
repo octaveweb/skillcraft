@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Login Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-d53d10572a0e0d37cb8d614a3f177a0c.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css">
+</head>
+
+<body>
+    <div class="logi-contener">
+        <div class="over-layout">
+            <img src="../image/login.png">
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="all-massage-contener" id="massage-error">
+        <div class="massage error">
+            <div id="massage-promt">Error username password dose not match Try Again</div>
+            <i class="fa-sharp fa-solid fa-xmark-large" id="close-icon-of-error"></i>
+
+        </div>
+        <div class="all-massage-contener" id="massage-warning">
+            <div class="massage error">
+                <div id="massage-promt">Error username password dose not match Try Again</div>
+                <i class="fa-sharp fa-solid fa-xmark-large" id="close-icon-of-warning "></i>
+
+            </div>
+        </div>
+        <div class="all-massage-contener" id="massage-success">
+            <div class="massage error">
+                <div id="massage-promt">Error username password dose not match Try Again</div>
+                <i class="fa-sharp fa-solid fa-xmark-large" id="close-icon-of-success"></i>
+
+            </div>
+        </div>
+
+
+        <script>
+            //calculation for user name and password
+            {
+                const users = [
+                    { username: 'user1', password: 'password1' },
+                    { username: 'free', password: '123' },
+                    { username: 'karan007', password: 'p1' },
+                    { username: 'pradip007', password: 'admin321' },
+                    { username: 'user2', password: 'password2' }
+                ];
+
+                document.getElementById('login-form').addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+
+                    const user = users.find(user => user.username === username && user.password === password);
+
+                    if (user) {
+                        alert('Login successful!');
+                        window.location.href = "landpage.html";
+                    } else {
+                        if (mError.style.display = "none") {
+                            mError.style.display = "flex";
+                        }
+                    }
+                });
+
+            }
+
+            //massage close
+            {
+                var mError = document.getElementById("massage-error");
+
+                var closeIconMassageError = document.getElementById("close-icon-of-error");
+
+                closeIconMassageError.addEventListener("click", () => {
+                    if (mError.style.display = "flex") {
+                        mError.style.display = "none";
+                    }
+                })
+
+            }
+
+
+        </script>
+</body>
+
+</html>
