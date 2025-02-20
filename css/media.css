@@ -1,0 +1,90 @@
+/*
+/* for desktops */
+/* @media only screen and (min-width: 1367px) {} */
+
+/* for laptops */
+/* @media only screen and (min-width: 991px) and (max-width: 1366px) {} */
+
+/* for large tablets */
+/* @media only screen and (min-width: 769px) and (max-width: 990px) {} */
+
+/* for smaller tablets */
+/* @media only screen and (min-width: 481px) and (max-width: 768px) {} */
+
+/* for cellphones */
+@media only screen and (max-width: 501px) {
+    nav {
+        height: 8vh;
+        background-color: rgb(255, 159, 159);
+    }
+
+    .top-nav {
+        display: none;
+    }
+    nav .logo img {
+        width: 70px;
+    }
+
+    nav>ul {
+        display: none;
+    }
+    .section-1{
+        padding: 1rem 1rem;
+    }
+    .date{
+        width: auto;
+        padding: 4rem 5rem;
+    }
+    #menu-nav_icon{
+        display: block;
+    }
+.btn {
+    /* padding: 4% 5%; */
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-overflow: ellipsis; 
+}
+
+.btn-theme {
+    font-size: 14px;
+}
+.search button{
+display: none
+}
+nav .search i {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+footer .logo-footer img {
+
+    width:100px;
+    /* margin-bottom: 50px; */
+}
+
+.logo-footer {
+    align-items: center;
+   flex-flow: column;
+   /* background-color: red; */
+   gap: 50px;
+}
+footer .top-footer .title-h3 {
+    /* margin: 0 auto; */
+    /* padding-5px; */
+}
+footer .online-handles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    transition: var(--animation-slow);
+}
+}

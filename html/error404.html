@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error 404 - Offical</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
         href="/css/app-wa-d53d10572a0e0d37cb8d614a3f177a0c.css?vsn=d">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
@@ -474,65 +475,17 @@
     </footer>
 
 
-    <script src="../js/script.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
+    <script src="/js/script.js"></script>
+    <script src="/js/searchDataInseru.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>
         $(document).ready(function () {
-            // Hide the loader when the page is fully loaded
-            $(".lodaer-contener").fadeOut("slow");
-        });
-
-        var changeToX = document.getElementById("search-icon");
-        var hideUnhideSearchBox = document.getElementById("search_conteer");
-
-        changeToX.addEventListener("click", () => {
-            if (hideUnhideSearchBox.style.display == "none" || hideUnhideSearchBox.style.display == "") {
-                hideUnhideSearchBox.style.display = "flex";
-                hideUnhideSearchBox.style.opacity = "1";
-                changeToX.classList.remove("fa-magnifying-glass");
-                changeToX.classList.add("fa-xmark");
-            } else {
-                hideUnhideSearchBox.style.display = "none";
-                hideUnhideSearchBox.style.opacity = "0";
-                changeToX.classList.remove("fa-xmark");
-                changeToX.classList.add("fa-magnifying-glass");
-            }
-        });
-        document.getElementById('search').addEventListener('input', function () {
-            let filter = this.value.trim().toLowerCase(); // Get the input value and trim whitespace, convert to lowercase
-            let items = document.querySelectorAll('#items-list li'); // Select all list items within the items-list container
-
-            let resultsFound = false; // Flag to track if any results are found
-
-            items.forEach(function (item) {
-                let text = item.textContent.trim().toLowerCase(); // Get the trimmed text content of each list item and convert to lowercase
-                if (text.includes(filter)) {
-                    item.style.display = 'block'; // Show the item if it matches the filter
-                    item.style.opacity = "1"; // Set opacity to fully visible (optional)
-                    resultsFound = true; // Set flag to true if at least one result is found
-                } else {
-                    item.style.display = 'none'; // Hide the item if it does not match the filter
-                    // item.style.opacity = "0"; // Optionally set opacity to fully invisible (uncomment if needed)
-                }
-            });
-
-            let mError = document.getElementById('massage-error'); // Assuming 'massage-error' is the ID of your error message element
-
-            if (!resultsFound) {
-                mError.style.display = "flex"; // Show error message if no results are found
-            } else {
-                mError.style.display = "none"; // Hide error message if results are found
-            }
-        });
-
-        // Adding event listener for close icon of error message
-        document.getElementById('close-icon-of-error').addEventListener("click", function () {
-            let mError = document.getElementById('massage-error'); // Get the error message element
-            mError.style.display = "none"; // Hide the error message when close icon is clicked
-        });
-
+    $(".lodaer-contener").fadeOut("slow");
+});
     </script>
+
+    
 </body>
 
 </html>
